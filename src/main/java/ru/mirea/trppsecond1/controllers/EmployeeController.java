@@ -1,10 +1,10 @@
 package ru.mirea.trppsecond1.controllers;
 
-import ru.mirea.trppsecond1.entity.Employee;
+import com.opencsv.bean.CsvToBeanBuilder;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
-import com.opencsv.bean.CsvToBeanBuilder;
+import ru.mirea.trppsecond1.entity.Employee;
 import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Optional;
@@ -18,7 +18,12 @@ public class EmployeeController {
 
     /** Конструктор. */
     public EmployeeController() {
-        employeeList = new CsvToBeanBuilder<Employee>(new InputStreamReader(this.getClass().getResourceAsStream("/MOCK_DATA.csv"))).withType(Employee.class).build().parse();
+employeeList = new CsvToBeanBuilder<Employee>(
+        new InputStreamReader(this.getClass().getResourceAsStream("/MOCK_DATA.csv")))
+        .withType(Employee.class)
+        .build()
+        .parse();
+
     }
 
     /**
