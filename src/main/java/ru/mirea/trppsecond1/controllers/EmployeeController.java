@@ -1,6 +1,6 @@
-package ru.mirea.trpp_second_1.controllers;
+package ru.mirea.trppsecond1.controllers;
 
-import ru.mirea.trpp_second_1.entity.Employee;
+import ru.mirea.trppsecond1.entity.Employee;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
